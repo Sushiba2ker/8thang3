@@ -64,7 +64,7 @@ const Message = styled(motion.p)`
   line-height: 1.7;
   color: #333;
   margin-bottom: 25px;
-  font-family: 'Comic Sans MS', 'Bubblegum Sans', 'Indie Flower', cursive;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
   position: relative;
   
@@ -217,7 +217,7 @@ const HeartRow = styled(motion.div)`
 const FinalMessage = styled(motion.div)`
   font-size: 4rem;
   color: white;
-  font-family: 'Pacifico', cursive;
+  font-family: 'Pacifico', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-shadow: 0 0 20px #ff69b4, 0 0 30px #ff69b4;
   z-index: 1001;
   position: absolute;
