@@ -21,23 +21,6 @@ const CardContainer = styled(motion.div)`
   position: relative;
   overflow: hidden;
   
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 6px;
-    background: linear-gradient(to right, #ff69b4, #ffb6c1, #ff69b4);
-    animation: shimmer 3s infinite linear;
-    background-size: 200% 100%;
-  }
-  
-  @keyframes shimmer {
-    0% { background-position: 100% 0; }
-    100% { background-position: -100% 0; }
-  }
-  
   &:after {
     content: '';
     position: absolute;
@@ -63,7 +46,7 @@ const Message = styled(motion.p)`
   font-size: 1.3rem;
   line-height: 1.7;
   color: #333;
-  margin-bottom: 25px;
+  margin-bottom: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
   position: relative;
@@ -83,26 +66,18 @@ const ButtonContainer = styled.div`
   display: flex;
   justify-content: center;
   position: relative;
-  
-  &:before {
-    content: '';
-    position: absolute;
-    top: -20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
-    height: 1px;
-    background: linear-gradient(to right, transparent, rgba(255,105,180,0.5), transparent);
-  }
+  width: 100%;
+  padding: 0 15px;
+  margin-top: 25px;
 `;
 
 const Button = styled(motion.button)`
   background: linear-gradient(45deg, #ff69b4, #ffb6c1);
   border: none;
   border-radius: 50px;
-  padding: 14px 28px;
+  padding: 12px 24px;
   color: white;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
   box-shadow: 
@@ -111,32 +86,24 @@ const Button = styled(motion.button)`
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
-  
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(255, 255, 255, 0.2),
-      transparent
-    );
-    transition: 0.5s;
-  }
-  
-  &:hover:before {
-    left: 100%;
+  max-width: 100%;
+  white-space: nowrap;
+
+  @media (max-width: 480px) {
+    padding: 10px 20px;
+    font-size: 0.9rem;
   }
 `;
 
 const HeartIcon = styled(motion.span)`
   display: inline-block;
-  margin-left: 10px;
+  margin-left: 8px;
   font-size: 1.2rem;
+  
+  @media (max-width: 480px) {
+    font-size: 1rem;
+    margin-left: 6px;
+  }
 `;
 
 const ProgressBar = styled.div`
